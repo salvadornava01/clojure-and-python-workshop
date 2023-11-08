@@ -1,1 +1,13 @@
-<h1>Data from clojure service: {{text}}</h1>
+<h1>The data in this page is served from clojure service :D</h1>
+<h2>{{page_title}}</h2>
+<div>
+    {% for article in articles %}
+        <h2>
+            {{article.title}}
+        </h2>
+        <p>
+            {{article.content}}
+        </p>
+        <img src="{{article.image}}"/>
+    {% endfor %}
+</div>
