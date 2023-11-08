@@ -1,13 +1,15 @@
 (ns clojure-service.core
   (:gen-class)
   (:require [io.pedestal.http :as http]
-            [io.pedestal.http.route :as route]))
+            [io.pedestal.http.route :as route]
+            [clojure.data.json :as json]))
 
 (defn response
 [request]
 {:status 200
- :headers {"Content-Type" "text/html"}
- :body "<h1>Hello world! :D</h1>"})
+ :headers {"Content-Type" "application/json"}
+ :body (json/write-str {:text "This text comes from Clojure service! :D"
+                        :objects [{:title "Title 1" :content "Content 1"} {:title "Title 2" :content "Content2"}]})})
 
 (def routes
   (route/expand-routes

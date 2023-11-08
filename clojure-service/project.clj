@@ -5,7 +5,8 @@
             :url "https://www.eclipse.org/legal/epl-2.0/"}
   :dependencies [[org.clojure/clojure "1.11.1"]
                  [io.pedestal/pedestal.service "0.6.0"]
-                 [io.pedestal/pedestal.jetty "0.6.0"]]
+                 [io.pedestal/pedestal.jetty "0.6.0"]
+                 [org.clojure/data.json "2.4.0"]]
   :main ^:skip-aot clojure-service.core
   :target-path "target/%s"
   :profiles {:uberjar {:aot :all
